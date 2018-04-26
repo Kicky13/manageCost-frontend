@@ -1,0 +1,149 @@
+page-berpergian {
+    .subpergi{
+        text-align: center;
+        position: absolute;
+    }
+    .foto{
+        width: 100%;
+        // height: 42px;
+        margin-top: 10px;
+    }
+    .fotonya{
+        // width: 99px;
+        // height: 100px;
+        // left: 0;
+        // right: 0;
+        // margin-right: auto;
+        // margin-left: auto;
+        // position: absolute;
+        // margin-top: -47px;
+
+
+
+
+
+
+        width: 118px;
+        height: 118px;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        // margin-top: -96px;
+        margin-top: -102px;
+    }
+
+    .boxs{
+        // background-color: rgba(241, 237, 237, 0.85);
+        // background-color: rgba(255, 253, 253, 0.83);
+        // background-color: rgb(255, 253, 253);
+        // width: 100%;
+        // margin-left: -16px;
+        // height: 50px;
+        // position: absolute;
+        // margin-top: -50px;
+
+
+
+
+
+        background-color: #fffdfd;
+        width: 100%;
+        margin-left: -16px;
+        height: 35px;
+        position: absolute;
+        margin-top: -36px;
+    }
+
+    .fotos{
+        width: 100%;
+        height: 150px;
+    }
+    .fotosnya{
+        width: 100%;
+        height: 184px;
+        left: 0px;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        margin-top: -35px;
+    }
+
+    .butpergi{
+        width: 100%; 
+        background-color: #4F92FF; 
+        border-color: #4F92FF;
+    }
+    .boxbutton{
+        border:0;
+        color: #fff;
+        padding:5px;
+        font-size: 14px;
+      font-weight: bold;
+        width:100%;
+        display:block;
+        cursor:pointer;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        border-radius: 2px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
+    .floathome{
+        color:#999; 
+        font-size:16px;
+        font-weight:normal;  
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+      }
+      .floathome:focus{
+        top:-10px;
+        font-size:16px;
+        color: #2e75e8;
+      }
+      .iconhome{
+        color: #2e75e8;
+      }
+      .imgtitle{
+        width: 40%;
+        padding-top: 10px;
+        margin-left: -10px;
+      }
+      label 				 {
+        color:#999; 
+        font-size:14px;
+        font-weight:normal;
+        position:absolute;
+        pointer-events:none;
+        left:10px;
+        top:10px;
+        transition:0.2s ease all; 
+        -moz-transition:0.2s ease all; 
+        -webkit-transition:0.2s ease all;
+      }
+      .error
+      {
+      color:red;
+      font-size: 12px;
+      }
+      .boxbutton{
+        border:0;
+        color: #fff;
+        padding:5px;
+        font-size: 14px;
+      font-weight: bold;
+        width:100%;
+        display:block;
+        cursor:pointer;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        border-radius: 2px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
+}

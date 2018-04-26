@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Berpergian</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="sub-header subpergi"><b>Rencana Perjalanan</b></div><br>
+
+  <div class="fotos">
+    <img src="http://jemputin.kodeku.net/Monumen-Simpang-Lima-Gumul.jpg" class="fotosnya"><br>
+  </div>
+  <div class="boxs">
+
+  </div>
+
+  <div class="foto">
+    <img src="http://jemputin.kodeku.net/flat.png" class="fotonya"><br>
+  </div>
+  
+    <form action="" method="post" novalidate  [formGroup]="costumers">
+      <ion-item>
+        <ion-label floating class="floathome"><ion-icon name="map" class="iconhome" ></ion-icon>&nbsp; Penjemputan Dari</ion-label> 
+        <ion-input type="text" #origin value="" formControlName="bdari"> </ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('bdari').hasError('required') ) && costumers.get('bdari').touched">
+          <div class="error" *ngIf="costumers.get('bdari').hasError('required') && costumers.get('bdari').touched">*Harap isikan lokasi penjemputan</div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="floathome"> <ion-icon name="locate" class="iconhome" ></ion-icon>&nbsp; Tujuan Ke</ion-label>
+        <ion-input type="text" #destination value="" formControlName="bke"></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('bke').hasError('required') ) && costumers.get('bke').touched">
+          <div class="error" *ngIf="costumers.get('bke').hasError('required') && costumers.get('bke').touched">*Harap isikan tujuan anda</div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating class="floathome"> <ion-icon name="flower" class="iconhome"></ion-icon>&nbsp; Fasilitas</ion-label>
+        <ion-select value="" formControlName="bfal" #facility>
+          <ion-option>Mobil + Supir</ion-option>
+          <ion-option>Mobil + Supir + BBM</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('bfal').hasError('required') ) && costumers.get('bfal').touched">
+          <div class="error" *ngIf="costumers.get('bfal').hasError('required') && costumers.get('bfal').touched">*Harap isikan fasilitas yang akan digunakan</div>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating class="floathome">  <ion-icon name="people" class="iconhome"></ion-icon>&nbsp; Penumpang</ion-label>
+        <ion-input type="number" min="1" value="1" formControlName="bpenumpang" #passenger></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('bpenumpang').hasError('required') ) && costumers.get('bpenumpang').touched">
+          <div class="error" *ngIf="costumers.get('bpenumpang').hasError('required') && costumers.get('bpenumpang').touched">*Harap isikan jumlah penumpang</div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating class="floathome"> <ion-icon name="outlet" class="iconhome"></ion-icon>&nbsp; Kota Yang Dituju</ion-label>
+        <ion-input type="text"  value="" formControlName="bkota" #tujuankota> </ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('bkota').hasError('required') ) && costumers.get('bkota').touched">
+          <div class="error" *ngIf="costumers.get('bkota').hasError('required') && costumers.get('bkota').touched">*Harap isikan kota kota yang akan dituju</div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating class="floathome"> <ion-icon name="md-calendar" class="iconhome" ></ion-icon>&nbsp; Tanggal</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="selectedDate" [min]="minDate" value="" formControlName="btanggal" #date></ion-datetime>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('btanggal').hasError('required') ) && costumers.get('btanggal').touched">
+          <div class="error" *ngIf="costumers.get('btanggal').hasError('required') && costumers.get('btanggal').touched">*Harap isikan tanggal penjemputan</div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating class="floathome"> <ion-icon name="clock" class="iconhome"></ion-icon>&nbsp; Jam Keberangkatan</ion-label>
+        <ion-datetime displayFormat="HH:mm " value="" formControlName="bjam" #time></ion-datetime>
+      </ion-item>
+      <ion-item no-lines *ngIf="(costumers.get('bjam').hasError('required') ) && costumers.get('bjam').touched">
+          <div class="error" *ngIf="costumers.get('bjam').hasError('required') && costumers.get('bjam').touched">*Harap isikan jam penjemputan</div>
+      </ion-item>
+    
+      <button ion-button class="boxbutton" (click)="findTravel()" [disabled]="costumers.invalid">Cari Travel</button>
+    </form>
+</ion-content>

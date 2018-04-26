@@ -1,0 +1,53 @@
+page-whatsapp {
+    .foto{
+        margin-bottom: 120px;
+    }
+    .fotonya{
+        width:75%;
+        left: 0;
+        right: 0;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+    }
+    .namawa{
+        font-size: 14px;
+    color: #2e75e8;
+    font-weight: bold;
+    margin-bottom: -5px;font-size: 14px;
+    color: #2e75e8;
+    font-weight: bold;
+    margin-bottom: -5px;
+    }
+    .namawaa{
+        font-size: 14px;
+    color: #000;
+    margin-bottom: 20px;
+    }
+    .itemwa{
+        font-size: 14px;
+    }
+    .boxbutton{
+        border:0;
+        color: #fff;
+        padding:5px;
+        font-size: 14px;
+      font-weight: bold;
+        width:100%;
+        display:block;
+        cursor:pointer;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        border-radius: 2px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
+    .ketbutton{
+        font-size: 12px;
+        color: #000;
+    }
+    ion-navbar[hidebackbutton] button[menutoggle] {
+        display: block !important;
+      }
+}

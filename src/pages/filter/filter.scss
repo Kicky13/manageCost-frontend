@@ -1,0 +1,18 @@
+page-filter {
+    .filterbut{
+        width: 100%;
+        height:35px;
+        color:#fff;
+        margin-top:20px; 
+        background-color: #4F92FF; 
+        border-color: #4F92FF;
+    }
+    .range-md .range-knob-handle .range-pin {
+        transform: translate3d(0, 0, 0) scale(1); }
+      
+      .range-md:not(.range-has-pin) .range-knob-handle .range-knob {
+        transform: scale(1); }
+      
+      .range-ios .range-knob-handle .range-pin {
+        transform: translate3d(0, 0, 0) scale(1); }
+}

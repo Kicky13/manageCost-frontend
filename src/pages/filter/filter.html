@@ -1,0 +1,124 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Filter</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+        <ion-list>
+    <h3><b>Fasilitas</b></h3>
+
+          <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="a">
+              <label class="form-check-label" for="a">
+                  Mobil + Supir
+              </label>
+            </div>
+  
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="b">
+                <label class="form-check-label" for="b">
+                    Mobil + Supir + BBM
+                </label>
+              </div> -->
+
+              <ion-item>
+                <ion-label>Mobil + Supir</ion-label>
+                <ion-toggle value="foo" checked="true"></ion-toggle>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Mobil + Supir + BBM</ion-label>
+                <ion-toggle value="foo" checked="true"></ion-toggle>
+              </ion-item>
+
+      
+  
+    <h3><b>Tanggal</b></h3>
+    <!-- <input type="date" class="form-control" id="tanggal"> -->
+    <ion-item>
+        <ion-label>Berangkat</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="selectedDate" [min]="minDate"></ion-datetime>
+      </ion-item>
+  
+    <h3><b>Jenis Mobil</b></h3>
+    <!-- <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="c">
+        <label class="form-check-label" for="c">
+           Toyota
+        </label>
+      </div>
+      <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="d">
+          <label class="form-check-label" for="d">
+             Kijang
+          </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="e">
+            <label class="form-check-label" for="e">
+                Inova
+            </label>
+          </div> -->
+  
+
+
+
+          <ion-item>
+            <ion-label>Toyota</ion-label>
+            <ion-toggle value="foo" checked="true"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Kijang</ion-label>
+            <ion-toggle value="foo" checked="true"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Inova</ion-label>
+            <ion-toggle value="foo" checked="true"></ion-toggle>
+          </ion-item>
+
+      <h3><b>Kisaran Harga</b></h3>
+
+    </ion-list>
+
+
+
+      <!-- <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="f">
+          <label class="form-check-label" for="f">
+              < 100.000
+          </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="g">
+            <label class="form-check-label" for="g">
+                > 100.000
+            </label>
+          </div> -->
+
+
+
+          <ion-list>
+          <ion-item>
+            <ion-range dualKnobs="true" min="5000" max="150000" step="10000" snaps="true" pin="true" [(ngModel)]="structure" color="dark">
+            </ion-range>
+          </ion-item>
+        </ion-list>
+
+
+          <!-- <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="h">
+              <label class="form-check-label" for="h">
+                  Semua Harga
+              </label>
+            </div> -->
+            <ion-item>
+                <ion-label>Semua Harga</ion-label>
+                <ion-toggle value="foo" checked="true"></ion-toggle>
+              </ion-item>
+            <button type="button" class="btn btn-primary filterbut" (click)="linkbutton()"> Cari </button>
+  
+  </ion-content>

@@ -1,0 +1,31 @@
+page-result {
+    ion-card {
+        height: 180px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 10px;
+        width: 100%;
+      }
+    .ukuran{
+        width: 100px;
+        height: 100px;
+    }
+    .resultnamtravel{
+        padding-left:0px;
+    }
+    .resultharga{
+        padding-left:0px;
+    }
+    .resultcol{
+        padding: 0px;
+    }
+    .buttonton{
+        width: 100%; 
+        color:#fff;
+        background-color: #4F92FF; 
+        border-color: #4F92FF;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius:2px;
+    }
+}

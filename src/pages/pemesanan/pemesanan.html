@@ -1,0 +1,193 @@
+<ion-header>
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+  <div>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="pemesanan">
+        Pemesanan
+      </ion-segment-button>
+      <ion-segment-button value="detail">
+        Detail
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+
+
+<ion-content padding>
+<div [ngSwitch]="pet" >
+  <div *ngIf="detail">
+    <ion-list *ngSwitchCase="'pemesanan'">
+      <ion-card class="card">
+        <img src="{{ imgUrl + detail.car.travel.logo }}" class="pesancard">
+      </ion-card>
+      <div class="row">
+        <div class="col pesannamatravel">{{ detail.car.travel.travel_name }}</div>
+      </div>
+      <div class="row">
+        <div class="col pesanharga">Rp. {{ detail.price }}</div>
+        <div class="col col-50 pisahbut">
+          <button class="button button-positive buttonton" (click)="linkbutton(detail.id)">Lanjut</button>
+        </div>
+      </div>
+
+      <div class="row pisah">
+        <ion-col col-6 class="nam">Mobil Avanza</ion-col>
+        <ion-col col-6 class="nam">Rp 560.000</ion-col>
+      </div>
+
+      <div class="row">
+        <ion-col col-6 class="nam">Sopir + BBM</ion-col>
+        <ion-col col-6 class="nam">Rp 110.000</ion-col>
+      </div>
+
+      <div *ngIf="date" class="row">
+        <ion-col col-6 class="nam">Tanggal</ion-col>
+        <ion-col col-6 class="nam">{{ date }}</ion-col>
+      </div>
+
+      <div class="row">
+        <ion-col col-6 class="nam">Dari</ion-col>
+        <ion-col col-6 class="nam">{{ detail.origin }}</ion-col>
+      </div>
+
+      <div class="row">
+        <ion-col col-6 class="nam">Ke</ion-col>
+        <ion-col col-6 class="nam">{{ detail.destination }}</ion-col>
+      </div>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'detail'">
+      <ion-card class="card">
+        <img src="{{ imgUrl + detail.car.car_image }}" class="pesancard2">
+      </ion-card>
+      <div class="row">
+        <div class="col pesannamatravel"><b>{{ detail.car.car_name }}</b></div>
+      </div>
+      <hr id="garis">
+      <div class="row pisah">
+        <ion-col col-9 class="nam">Brand</ion-col>
+        <ion-col col-3 class="nam">{{ detail.car.type }}</ion-col>
+      </div>
+      <div class="row">
+        <ion-col col-9 class="nam">Bahan Bakar</ion-col>
+        <ion-col col-3 class="nam">{{ detail.car.fuel_type }}</ion-col>
+      </div>
+      <div class="row">
+        <ion-col col-9 class="nam">Warna Mobil</ion-col>
+        <ion-col col-3 class="nam"><div class="kotakwarna" [ngStyle]="{'background-color':(detail.car.color), 'border':'0.5px solid #000'}"></div></ion-col>
+      </div>
+      <div class="row">
+        <ion-col col-9 class="nam">CC Mobil</ion-col>
+        <ion-col col-3 class="nam">{{ detail.car.car_cc }} CC</ion-col>
+      </div>
+      <div class="row">
+        <ion-col col-9 class="nam">Kapasitas Penumpang</ion-col>
+        <ion-col col-3 class="nam">{{ detail.car.max_passenger }} Orang</ion-col>
+      </div>
+      <div class="row">
+          <ion-col col-9 class="nam">Kapasitas Bagasi</ion-col>
+          <ion-col col-3 class="nam">{{ detail.car.luggage_capacity }} Koper</ion-col>
+      </div>
+      <div class="row">
+        <ion-col col-9 class="nam">Plat Nomor</ion-col>
+        <ion-col col-3 class="nam">{{ detail.car.reg_plate }} </ion-col>
+      </div>
+      <div class="row">
+        <ion-col col-9 class="nam">Tahun Mobil</ion-col>
+        <ion-col col-3 class="nam">{{ detail.car.car_year }}</ion-col>
+      </div>
+    </ion-list>
+  </div>
+</div>
+
+</ion-content>
+
+
+
+
+
+<!-- 
+
+
+
+
+<ion-content padding>
+  
+
+  <div [ngSwitch]="pet">
+    <div *ngIf="detail">
+      <ion-list *ngSwitchCase="'pemesanan'">
+        <ion-card class="card">
+          <img src="{{ imgUrl + detail.car.travel.logo }}" class="pesancard">
+        </ion-card>
+        <div class="row">
+          <div class="col pesannamatravel">{{ detail.car.travel.travel_name }}</div>
+        </div>
+        <div class="row">
+          <div class="col pesanharga">Rp. {{ detail.price }}</div>
+          <div class="col col-50 pisahbut">
+            <button class="button button-positive butpemesanan" (click)="linkbutton()">Lanjut</button>
+          </div>
+        </div>
+
+        <div class="row pisah">
+          <ion-col col-6 class="nam">Mobil Avanza</ion-col>
+          <ion-col col-6 class="nam">Rp 560.000</ion-col>
+        </div>
+
+        <div class="row">
+          <ion-col col-6 class="nam">Sopir + BBM</ion-col>
+          <ion-col col-6 class="nam">Rp 110.000</ion-col>
+        </div>
+
+        <div *ngIf="date" class="row">
+          <ion-col col-6 class="nam">Tanggal</ion-col>
+          <ion-col col-6 class="nam">{{ date }}</ion-col>
+        </div>
+
+        <div class="row">
+          <ion-col col-6 class="nam">Dari</ion-col>
+          <ion-col col-6 class="nam">{{ detail.origin }}</ion-col>
+        </div>
+
+        <div class="row">
+          <ion-col col-6 class="nam">Ke</ion-col>
+          <ion-col col-6 class="nam">{{ detail.destination }}</ion-col>
+        </div>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'detail'">
+        <ion-card class="card">
+          <img src="{{ imgUrl + detail.car.car_image }}" class="pesancard2">
+        </ion-card>
+        <div class="row">
+          <div class="col pesannamatravel"><b>{{ detail.car.car_name }}</b></div>
+        </div>
+        <hr id="garis">
+        <div class="row pisah">
+          <ion-col col-9 class="nam">Brand</ion-col>
+          <ion-col col-3 class="nam">{{ detail.car.type }}</ion-col>
+        </div>
+        <div class="row">
+          <ion-col col-9 class="nam">Bahan Bakar</ion-col>
+          <ion-col col-3 class="nam">Pertamax</ion-col>
+        </div>
+        <div class="row">
+          <ion-col col-9 class="nam">Warna Mobil</ion-col>
+          <ion-col col-3 class="nam">Donker</ion-col>
+        </div>
+        <div class="row">
+          <ion-col col-9 class="nam">Kapasitas Penumpang</ion-col>
+          <ion-col col-3 class="nam">{{ detail.car.max_passenger }} Orang</ion-col>
+        </div>
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content> -->

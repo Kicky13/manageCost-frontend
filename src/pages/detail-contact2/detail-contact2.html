@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Detail Kontak</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="box">
+    <form action="" method="post" novalidate [formGroup]="user">
+      <ion-item>
+        <ion-label floating class="floathome">
+          <ion-icon name="map" class="iconhome"></ion-icon>&nbsp; Nama Panjang
+        </ion-label>
+
+        <ion-input type="text" #name value="" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item no-lines
+                *ngIf="( user.get('name').hasError('required') || user.get('name').hasError('minlength') || user.get('name').hasError('maxlength') ) && user.get('name').touched">
+        <div class="error" *ngIf="user.get('name').hasError('required') && user.get('name').touched">
+          *Harap isikan Nama Anda
+        </div>
+        <div class="error" *ngIf="user.get('name').hasError('minlength') && user.get('name').touched">
+          *Isikan Nama min(3 huruf)
+        </div>
+        <div class="error" *ngIf="user.get('name').hasError('maxlength') && user.get('name').touched">
+          *Isikan Nama max(25 huruf)
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="floathome">
+          <ion-icon name="locate" class="iconhome"></ion-icon>&nbsp; Nomor Telepon
+        </ion-label>
+        <ion-input type="tel" #phone value="" formControlName="phone"></ion-input>
+      </ion-item>
+      <ion-item no-lines
+                *ngIf="( user.get('phone').hasError('required') || user.get('phone').hasError('minlength') || user.get('phone').hasError('maxlength') ) && user.get('phone').touched">
+        <div class="error" *ngIf="user.get('phone').hasError('required') && user.get('phone').touched">*Harap isikan
+          Nomor Anda
+        </div>
+        <div class="error" *ngIf="user.get('phone').hasError('minlength') && user.get('phone').touched">*Isikan Nomor
+          min(7 digit)
+        </div>
+        <div class="error" *ngIf="user.get('phone').hasError('maxlength') && user.get('phone').touched">Isikan Nomor
+          max(12 digit)
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="floathome">
+          <ion-icon name="locate" class="iconhome"></ion-icon>&nbsp; Email
+        </ion-label>
+        <ion-input type="email" #email value="" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item no-lines
+                *ngIf="( user.get('email').hasError('required') || user.get('email').hasError('email')) && user.get('email').touched">
+        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">*Harap isikan
+          email Anda
+        </div>
+        <div class="error" *ngIf="user.get('email').hasError('email') && user.get('email').touched">*Harap isikan email
+          Anda dengan Benar
+        </div>
+      </ion-item>
+
+
+      <div *ngIf="detail">
+        <div class="tanggal">
+          <ion-item>
+            <ion-label floating class="floathome">
+              <ion-icon name="locate" class="iconhome"></ion-icon>&nbsp; Tanggal
+            </ion-label>
+            <ion-input #date type="text" value="{{date}}"></ion-input>
+            <ion-input #tujukota type="text" value="{{tujukota}}"></ion-input>
+            <ion-input #time type="text" value="{{time.hour}}:{{time.minute}}"></ion-input>
+          </ion-item>
+        </div>
+        <button ion-button class="boxbutton" (click)="insertUser(id)" [disabled]="user.invalid">Lanjut</button>
+      </div>
+    </form>
+  </div>
+
+</ion-content>
