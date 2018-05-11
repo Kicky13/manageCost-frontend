@@ -33,7 +33,7 @@ page-result2 {
         color: #fff;
         padding:5px;
         font-size: 14px;
-      font-weight: bold;
+        font-weight: normal;
         width:100%;
         display:block;
         cursor:pointer;
@@ -42,6 +42,22 @@ page-result2 {
         border-radius: 2px;
         padding-right: 10px;
         margin-left: 0px;
-        margin-top: 20px;
+    }
+    .apa
+    {
+        padding-top: 20px;
+        width: 50%;
+    }
+    .card {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .font{
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
     }
 }

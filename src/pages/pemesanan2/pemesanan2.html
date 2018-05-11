@@ -38,12 +38,12 @@
 
       <div class="row pisah">
         <ion-col col-6 class="nam">Mobil Avanza</ion-col>
-        <ion-col col-6 class="nam">Rp 560.000</ion-col>
+        <ion-col col-6 class="nam">{{ detail.base_price }}</ion-col>
       </div>
 
       <div class="row">
         <ion-col col-6 class="nam">Sopir + BBM</ion-col>
-        <ion-col col-6 class="nam">Rp 110.000</ion-col>
+        <ion-col col-6 class="nam">{{ detail.additional_price }}</ion-col>
       </div>
 
       <div *ngIf="date" class="row">

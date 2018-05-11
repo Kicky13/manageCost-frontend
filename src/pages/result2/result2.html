@@ -10,6 +10,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+  <ng-container *ngIf="results != undefined && results.length > 0">
     <ion-card *ngFor="let result of results">
         <img src="{{ imgUrl + result.car.travel.logo }}" class="ukuran">
         <div class="row">
@@ -20,8 +21,16 @@
               <div class="col resultharga">{{date.day}}/{{date.month}}/{{date.year}}</div>
               <div class="col resultharga">{{time.hour}}:{{time.minute}}</div>
             <div class="col col-50 resultcol">
-                <button ion-button class="button button-positive boxbutton" (click)="itemTapped(result.id)">Lanjut</button>
+                <button ion-button class="button  boxbutton" (click)="itemTapped(result.id)">Lanjut</button>
             </div>
         </div>
     </ion-card>
+  </ng-container>
+      <div *ngIf="results === undefined || (results.length === 0 && results!==undefined) ">
+        <div class="font">
+          Data yang Anda Cari Tidak Ditemukan
+          <br>
+          <img src="http://jemputin.kodeku.net/undefined.png" class="apa">          
+        </div>
+      </div>
 </ion-content>

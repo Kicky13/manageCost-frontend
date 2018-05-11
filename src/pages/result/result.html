@@ -4,25 +4,35 @@
         <ion-icon name="menu"></ion-icon>
       </button>
       <ion-title>Search Result</ion-title>
-      <ion-buttons end>
-            <button class="button button-positive resultlanjut" (click)="openModal()"> Filter </button>
-      </ion-buttons>
+      
     </ion-navbar>
   </ion-header>
   <ion-content padding>
-            <ion-card  *ngFor="let result of results">
-                    <img src="{{ imgUrl + result.car.travel.logo }}" class="ukuran">
-                    <div class="row">
-                        <div class="col resultnamtravel"><b>{{ result.car.travel.travel_name }}</b></div>
-                    </div>
-                    <div class="row">
-                          <div class="col resultharga">Rp.{{ result.price }}</div>
-                          <div class="col resultharga">{{date.day}}/{{date.month}}/{{date.year}}</div>
-                        <div class="col col-50 resultcol">
-                            <button  class="button button-positive buttonton" (click)="itemTapped(result.id)">Lanjut</button>
-                        </div>
-                    </div>
-                </ion-card>
-     
+          <div *ngIf="results != undefined && results.length > 0">
+            <ion-buttons end>
+              <button class="button button-positive resultlanjut buttonton" (click)="openModal()"> Filter </button>
+        </ion-buttons>
+            <ion-card  *ngFor="let result of results" class="ioncard">
+              <img src="{{ imgUrl + result.car.travel.logo }}" class="ukuran">
+              <div class="row">
+                <div class="col resultnamtravel"><b>{{ result.car.travel.travel_name }}</b></div>
+              </div>
+              <div class="row">
+                <div class="col resultharga">Rp.{{ result.price }}</div>
+                <div class="col resultharga">{{date.day}}/{{date.month}}/{{date.year}}</div>
+                <div class="col col-50 resultcol">
+                  <button  class="button button-positive buttonton" (click)="itemTapped(result.id)">Lanjut</button>
+                </div>
+              </div>
+            </ion-card>
+          </div>
+          <div *ngIf="results === undefined || (results.length === 0 && results!==undefined) ">
+            <div class="font">
+              Data yang Anda Cari Tidak Ditemukan
+              <br>
+              <img src="http://jemputin.kodeku.net/undefined.png" class="apa">          
+            </div>
+          </div>
+    
       
   </ion-content>

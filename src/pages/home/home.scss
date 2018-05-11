@@ -5,6 +5,9 @@ page-home {
       height: 150px;
       box-shadow: 2px 0px 5px;
   }
+  ion-navbar[hidebackbutton] button[menutoggle] {
+    display: block !important;
+  }
 
 html{
 background-color: #2e75e8;
@@ -438,4 +441,5 @@ text-decoration: none;
 color:red;
 font-size: 12px;
 }
+
 }

@@ -15,6 +15,7 @@ import { IntroPage } from '../pages/intro/intro';
 import { KebijakanPrivasiPage } from '../pages/kebijakan-privasi/kebijakan-privasi';
 import { PemesananPage } from '../pages/pemesanan/pemesanan';
 import { ResultPage } from '../pages/result/result';
+import { ResultfilterPage } from '../pages/resultfilter/resultfilter';
 import { SiapaKamiPage } from '../pages/siapa-kami/siapa-kami';
 import { TravelPartnerPage } from '../pages/travel-partner/travel-partner';
 

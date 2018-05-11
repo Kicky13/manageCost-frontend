@@ -1,27 +1,48 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar class="bar-positive">
+        <ion-buttons end>
+            <button class="button skip" (click)="openModal()"> Skip </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
 
 <ion-content>
   <ion-slides pager>
 
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
+    <ion-slide class="slidee">
+        <div class="coba">
+            <img class="animated bounceInDown logo" src="http://jemputin.kodeku.net/logo3.png">
+            <h3 class="animated fadeIn cobah3">Selamat Datang</h3>
+            <p class="animated fadeIn cobah5">Kami menyediakan travel untuk anda!</p>
+        </div>
     </ion-slide>
   
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
+    <ion-slide class="slidee">
+        <div class="coba">
+            <img class="wow bounceInDown infinite slidetwo" src="http://jemputin.kodeku.net/svg-search.gif">
+            <h4 class="animated fadeIn cobah4">Masukkan Lokasi dan Tujuan Anda</h4>
+            <p class="animated fadeIn cobah5">Tentukan kemana anda pergi</p>
+        </div>
     </ion-slide>
   
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
+    <ion-slide class="slidee">
+        <div class="coba">
+            <img class="wow bounceInDown infinite slidetwo" src="http://jemputin.kodeku.net/calender.gif">
+            <h4 class="animated fadeIn cobah4">Tentukan Tanggal Keberangkatan</h4>
+            <h5 class="animated fadeIn cobah5">Rencanakan keberangkatan travel</h5>
+        </div>
     </ion-slide>
+    
+    <ion-slide class="slidee">
+        <div class="coba">
+            <img class="wow bounceInDown infinite slidethree" src="http://jemputin.kodeku.net/car.gif">
+            <h4 class="animated fadeIn cobah4">Temukan Travel Yang Anda Inginkan</h4>
+            <h5 class="animated fadeIn cobah5">Perjalanan anda dijamin memuaskan</h5>
+        </div>
+    </ion-slide>
+
+    
   
   </ion-slides>
 
-</ion-content>
+</ion-content> 

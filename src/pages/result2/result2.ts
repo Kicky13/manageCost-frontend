@@ -4,6 +4,7 @@ import { Pemesanan2Page } from '../pemesanan2/pemesanan2';
 import { FilterPage } from '../filter/filter';
 import { BerpergianProvider } from "../../providers/berpergian/berpergian";
 import { AppProvider } from "../../providers/app/app";
+import { LoadingController } from 'ionic-angular';
 
 
 /**
@@ -29,7 +30,7 @@ export class Result2Page {
   results: any;
   imgUrl: string;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public BerpergianCtrl: BerpergianProvider, public app: AppProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public BerpergianCtrl: BerpergianProvider, public app: AppProvider, public loadingCtrl : LoadingController) {
     this.origin = this.navParams.get('ori')
     this.destination = this.navParams.get('dest')
     this.passenger = this.navParams.get('passe')
@@ -45,11 +46,20 @@ export class Result2Page {
   }
 
   loadResult() {
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+      spinner: 'dots'
+      
+    });
+  
+    loading.present();
+
     this.BerpergianCtrl.findTravel(this.origin, this.destination, this.passenger, this.facility ).subscribe(
       data => {
         this.results = data.data.services;
         this.imgUrl = this.app.imgUrl;
         console.log(data.data.services);
+        loading.dismiss(); 
       }
     );
   }

@@ -1,3 +1,49 @@
 page-intro {
 
+    .slidee{
+        background-color: white;
+    }
+    .coba{
+        padding-top: 100px;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+    .logo{
+        width: 50%;
+        animation-duration:2s;
+        margin-bottom: 100px;
+    }
+    .cobah3{
+        color: #2196f3;
+        animation-delay: 2s;
+        font-weight: bold;
+    }
+    .cobah4{
+        color: #2196f3;
+        animation-delay: 2s;
+        font-weight: bold;        
+    }
+    .cobah5{
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: -5px; 
+        font-family: Roboto, sans-serif;
+        color: #2196f3;
+        animation-delay: 3s;
+    }
+    .skip{
+        background-color: ghostwhite;
+        font-size: 22px;
+        color: #2196f3;
+    }
+    .slidetwo{
+        width: 37%;
+        animation-duration:2s;
+        margin-bottom: 80px;
+    }
+    .slidethree{
+        width: 60%;
+        animation-duration:0s;
+        margin-bottom: 25px;
+    }
 }

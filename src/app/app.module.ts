@@ -20,6 +20,7 @@ import { PemesananPage } from '../pages/pemesanan/pemesanan';
 import { Pemesanan2Page } from '../pages/pemesanan2/pemesanan2';
 import { ResultPage } from '../pages/result/result';
 import { Result2Page } from '../pages/result2/result2';
+import { ResultfilterPage } from '../pages/resultfilter/resultfilter';
 import { SiapaKamiPage } from '../pages/siapa-kami/siapa-kami';
 import { TravelPartnerPage } from '../pages/travel-partner/travel-partner';
 
@@ -29,6 +30,7 @@ import { AppProvider } from '../providers/app/app';
 import { TravelPartnerProvider } from '../providers/travel-partner/travel-partner';
 import { PerjalananProvider } from '../providers/perjalanan/perjalanan';
 import { BerpergianProvider } from '../providers/berpergian/berpergian';
+import { FilterProvider } from '../providers/filter/filter';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { BerpergianProvider } from '../providers/berpergian/berpergian';
     PemesananPage,
     Pemesanan2Page,
     ResultPage,
-    Result2Page,    
+    Result2Page,   
+    ResultfilterPage, 
     SiapaKamiPage,
     TravelPartnerPage
   ],
@@ -76,6 +79,7 @@ import { BerpergianProvider } from '../providers/berpergian/berpergian';
     Pemesanan2Page,
     ResultPage,
     Result2Page,    
+    ResultfilterPage, 
     SiapaKamiPage,
     TravelPartnerPage
 
@@ -87,7 +91,8 @@ import { BerpergianProvider } from '../providers/berpergian/berpergian';
     AppProvider,
     TravelPartnerProvider,
     PerjalananProvider,
-    BerpergianProvider
+    BerpergianProvider,
+    FilterProvider
   ]
 })
 export class AppModule {}

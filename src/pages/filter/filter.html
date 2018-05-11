@@ -1,124 +1,67 @@
 <ion-header>
-    <ion-navbar>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-      <ion-title>Filter</ion-title>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Filter</ion-title>
+  </ion-navbar>
+</ion-header>
   
   <ion-content padding>
-        <ion-list>
-    <h3><b>Fasilitas</b></h3>
-
-          <!-- <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="a">
-              <label class="form-check-label" for="a">
-                  Mobil + Supir
-              </label>
-            </div>
-  
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="b">
-                <label class="form-check-label" for="b">
-                    Mobil + Supir + BBM
-                </label>
-              </div> -->
-
-              <ion-item>
-                <ion-label>Mobil + Supir</ion-label>
-                <ion-toggle value="foo" checked="true"></ion-toggle>
-              </ion-item>
-
-              <ion-item>
-                <ion-label>Mobil + Supir + BBM</ion-label>
-                <ion-toggle value="foo" checked="true"></ion-toggle>
-              </ion-item>
-
-      
-  
-    <h3><b>Tanggal</b></h3>
-    <!-- <input type="date" class="form-control" id="tanggal"> -->
-    <ion-item>
-        <ion-label>Berangkat</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="selectedDate" [min]="minDate"></ion-datetime>
-      </ion-item>
-  
-    <h3><b>Jenis Mobil</b></h3>
-    <!-- <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="c">
-        <label class="form-check-label" for="c">
-           Toyota
-        </label>
-      </div>
-      <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="d">
-          <label class="form-check-label" for="d">
-             Kijang
-          </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="e">
-            <label class="form-check-label" for="e">
-                Inova
-            </label>
-          </div> -->
-  
-
-
-
-          <ion-item>
-            <ion-label>Toyota</ion-label>
-            <ion-toggle value="foo" checked="true"></ion-toggle>
-          </ion-item>
-          <ion-item>
-            <ion-label>Kijang</ion-label>
-            <ion-toggle value="foo" checked="true"></ion-toggle>
-          </ion-item>
-          <ion-item>
-            <ion-label>Inova</ion-label>
-            <ion-toggle value="foo" checked="true"></ion-toggle>
-          </ion-item>
-
-      <h3><b>Kisaran Harga</b></h3>
-
-    </ion-list>
-
-
-
-      <!-- <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="f">
-          <label class="form-check-label" for="f">
-              < 100.000
-          </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="g">
-            <label class="form-check-label" for="g">
-                > 100.000
-            </label>
-          </div> -->
-
-
-
-          <ion-list>
-          <ion-item>
-            <ion-range dualKnobs="true" min="5000" max="150000" step="10000" snaps="true" pin="true" [(ngModel)]="structure" color="dark">
-            </ion-range>
-          </ion-item>
-        </ion-list>
-
-
-          <!-- <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="h">
-              <label class="form-check-label" for="h">
-                  Semua Harga
-              </label>
-            </div> -->
+      <div >
+          <div class="tanggal">
             <ion-item>
-                <ion-label>Semua Harga</ion-label>
-                <ion-toggle value="foo" checked="true"></ion-toggle>
-              </ion-item>
-            <button type="button" class="btn btn-primary filterbut" (click)="linkbutton()"> Cari </button>
+              <ion-label floating class="floathome">
+                <ion-icon name="locate" class="iconhome"></ion-icon>&nbsp; Dari
+              </ion-label>
+              <ion-input #origin type="text" value="{{originn}}"></ion-input>
+              <ion-input #destination type="text" value="{{destinationn}}"></ion-input>
+            </ion-item>
+          </div>
+          
+      </div>
+    <ion-item>
+      <ion-label floating class="floathome">Fasilitas</ion-label> 
+      <ion-select value="" #facility>
+        <ion-option>Mobil + Supir</ion-option>
+        <ion-option>Mobil + Supir + BBM</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+
+    <ion-item>
+      <ion-label>Tanggal</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="selectedDate" [min]="minDate" #date ></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating class="floathome">Jenis Mobil</ion-label>
+      <ion-select value="" #car>
+        <ion-option>Toyota</ion-option>
+        <ion-option>Kijang</ion-option>
+        <ion-option>Inova</ion-option>
+        <ion-option>Isuzu</ion-option>        
+      </ion-select>
+    </ion-item>
+
+    <br>
+
+    <ion-item>
+      <ion-label floating class="floathome">Kisaran Harga</ion-label>
+      <ion-select value="" #price>
+        <ion-option>Rp. 0 - 100.000</ion-option>
+        <ion-option>Rp. 100.000 - 250.000</ion-option>
+        <ion-option>Rp. 250.000 - 400.000</ion-option>
+        <ion-option>Rp. 400.000 - 500.000</ion-option>        
+      </ion-select>
+    </ion-item>
+
+    <!-- <h6>&nbsp;&nbsp;&nbsp;Kisaran Harga</h6>
+    <ion-item>
+      <ion-range dualKnobs="true" min="1000 disabled" max="150000" step="10000" snaps="true" pin="true" [(ngModel)]="structure" color="primary" #harga></ion-range>
+    </ion-item> -->
+
+    <button type="button" class="btn btn-primary filterbut" (click)="linkbutton()"> Terapkan </button>
   
   </ion-content>

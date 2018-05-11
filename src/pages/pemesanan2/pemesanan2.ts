@@ -45,7 +45,7 @@ loadDetail() {
       this.imgUrl = this.app.imgUrl;
       this.tujukota = this.navParams.get('tujukota');
       this.date = this.navParams.get('tanggal');
-      console.log(this.navParams.get('tanggal'));
+      console.log(this.detail);
     }
   );
 }
